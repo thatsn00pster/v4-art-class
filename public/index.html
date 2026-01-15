@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/icon.png"
+      type="image/png"
+    />
+    <title>MoonUnblok</title>
+
+    <link rel="stylesheet" href="./css/master.css" />
+    <script src="/uv/uv.bundle.js" charset="UTF-8"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="./js/preload.js"></script>
+
+    <!-- Custom MoonUnblok UI -->
+    <style>
+      :root {
+        --bg-main: #0b0616;
+        --bg-nav: #140a2b;
+        --accent: #8b5cf6;
+        --accent-soft: #a78bfa;
+        --text-main: #ede9fe;
+        --input-bg: #1e123f;
+      }
+
+      body {
+        background: radial-gradient(
+          circle at top,
+          #1e123f 0%,
+          #0b0616 60%
+        );
+        color: var(--text-main);
+      }
+
+      nav {
+        background: linear-gradient(
+          90deg,
+          #140a2b,
+          #1e123f
+        );
+        border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+      }
+
+      nav .logo h1 {
+        color: var(--accent);
+        letter-spacing: 1px;
+      }
+
+      #time {
+        color: var(--accent-soft);
+        font-weight: 600;
+      }
+
+      .navitems {
+        display: none;
+      }
+
+      .center-container {
+        margin-top: 120px;
+        text-align: center;
+      }
+
+      .center-container h1 {
+        font-size: 3rem;
+        background: linear-gradient(
+          90deg,
+          #a78bfa,
+          #8b5cf6
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+      }
+
+      .pxyinput {
+        width: 420px;
+        max-width: 90%;
+        background: var(--input-bg);
+        border: 1px solid rgba(139, 92, 246, 0.4);
+        border-radius: 14px;
+        padding: 14px 18px;
+        font-size: 1.05rem;
+        color: var(--text-main);
+        outline: none;
+        box-shadow: 0 0 0 rgba(139, 92, 246, 0);
+        transition: box-shadow 0.25s, border 0.25s;
+      }
+
+      .pxyinput::placeholder {
+        color: #c4b5fd;
+        opacity: 0.6;
+      }
+
+      .pxyinput:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 18px rgba(139, 92, 246, 0.45);
+      }
+
+      .frame {
+        margin-top: 40px;
+        width: 95%;
+        height: calc(100vh - 260px);
+        border-radius: 18px;
+        border: 1px solid rgba(139, 92, 246, 0.25);
+        background: #000;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      }
+    </style>
+  </head>
+
+  <body theme="main">
+    <nav>
+      <div class="logo">
+        <img src="./assets/images/icon.png" alt="Logo" draggable="false" />
+        <h1>MoonUnblok</h1>
+      </div>
+
+      <p id="time"></p>
+    </nav>
+
+    <div class="center-container">
+      <h1>Search</h1>
+      <input class="pxyinput" type="text" placeholder="Enter a URL or search..." />
+    </div>
+
+    <iframe class="frame"></iframe>
+  </body>
+
+  <script src="./js/index.js"></script>
+  <script src="./js/search.js"></script>
+</html>
